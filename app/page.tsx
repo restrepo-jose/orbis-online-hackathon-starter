@@ -4,10 +4,9 @@ export default function Home() {
   return (
     <main>
       <header>
-        <h1>Orbis starter</h1>
+        <h1>Orbis LIVE</h1>
         <p>
-          Connect, generate a continuous live video, then steer it by changing
-          the prompt while it runs.
+          Connect, generate a continuous live movie, then direct it by using the Live console.
         </p>
       </header>
       <OrbisDemo />

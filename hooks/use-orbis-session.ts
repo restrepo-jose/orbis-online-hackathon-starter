@@ -380,6 +380,13 @@ export function useOrbisSession(
     startFromNanoOutput,
     setNanoBusy,
     steer,
+    startWith: (runPrompt: string) =>
+      runAction(() => startGeneration(null, runPrompt)),
+    steerWith: (runPrompt: string) =>
+      runAction(async () => {
+        if (!runPrompt.trim()) throw new Error("Empty prompt.");
+        await sendCommand("set_prompt", { prompt: runPrompt.trim() });
+      }),
     pause: () => runAction(() => sendCommand("pause", {})),
     resume: () => runAction(() => sendCommand("resume", {})),
     reset: () => runAction(() => sendCommand("reset", {})),
